@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Installation and uninstallation functions.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function dropkick_requirements($phase) {
+  module_load_include('module', 'libraries');
+  module_load_include('module', 'dropkick', 'dropkick');
+  
+  $requirements['dropkick_js'] = array(
+   'title' => t('dropkick JavaScript file'),
+   'value' => dropkick_js_path() ? t('Available') : t('Unavailable'),
+   'description' => !dropkick_js_path() ? t('The Dropkick module needs the Dropkick libary to work. Download it !here and place it in sites/all/libraries/dropkick.', array('!here' => l(t('here'), 'http://jamielottering.github.com/DropKick/'))) : NULL,
+   'severity' => dropkick_js_path() ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+  );
+  
+  return $requirements;
+}

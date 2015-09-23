@@ -1,0 +1,20 @@
+/**
+ * @file
+ * Fixes some CSS issues to make Dropkick work well with Drupal core themes
+ */
+ul.dk_options_inner {
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.dk_fouc select {
+  position: inherit;
+  top: inherit;
+  visibility: inherit;
+}
+
+.dk_fouc .dk_container select {
+    position: relative;
+    top: -99999em;
+    visibility: hidden;
+}

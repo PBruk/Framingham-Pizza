@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * General functions and hook implementations.
+ *
+ * @see http://jamielottering.github.com/DropKick/
+ */
+
+/**
+ * Widget that Dropkick can be applied to
+ */
+define('DROPKICK_WIDGET', 'options_select');
+
+/**
+ * Implements hook_init().
+ */
+function dropkick_init() {
+  drupal_add_css(libraries_get_path('dropkick') . '/dropkick.css');
+  drupal_add_js(dropkick_js_path());
+  drupal_add_css(drupal_get_path('module', 'dropkick') . '/dropkick-fix.css');
+  drupal_add_js(array(
+    'dropkick' => array(
+      'selector' => variable_get('dropkick_jquery_selector', ''),
+    ),
+  ), 'setting');
+  drupal_add_js(drupal_get_path('module', 'dropkick') . '/dropkick.js');
+}
+
+/**
+ * Implement hook_menu()
+ */
+function dropkick_menu() {
+  $items = array();
+  
+  $items['admin/config/user-interface/dropkick'] = array(
+    'title' => 'Dropkick',
+    'description' => 'Configuration for Dropkick plugin',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dropkick_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'dropkick.admin.inc',
+  );
+  
+  return $items;
+}
+
+/**
+ * Returns the path to the Dropkick JavaScript file.
+ *
+ * @return mixed
+ *   The path to the JavaScript file or FALSE if no file could be found.
+ */
+function dropkick_js_path() {
+  $path = libraries_get_path('dropkick');
+
+  if (file_exists($path . '/jquery.dropkick-1.0.0.js')) {
+    return $path . '/jquery.dropkick-1.0.0.js';
+  }
+
+  return FALSE;
+}

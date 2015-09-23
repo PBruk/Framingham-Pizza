@@ -1,0 +1,291 @@
+/**
+ * responsive.custom.css is for custom media queries that are not set via the
+ * theme settings, such as cascading media queries.
+ *
+ * By default all the other responsive stylesheets used in Adaptivetheme use a
+ * "stacking method", however cascading media queries use a waterfall method so
+ * you can leverage the cascade and inheritance for all browsers that support
+ * media queries, regardless of screen size.
+ *
+ * @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack
+ *
+ * NOTE: this file loads by default, to disable got to your theme settings and
+ * look under the "CSS" settings tab.
+ */
+
+/* Some basic examples of cascading media queries. */
+
+/* Really small screens and up 
+@media only screen and (min-width: 220px) {
+}
+*/
+
+/* Smartphone sizes and up 
+@media only screen and (min-width: 320px) {
+}
+
+*/
+
+/* Smartphone sizes and down */
+@media only screen and (max-width: 480px) {
+
+h1#site-name {
+  font-size: 1.5em;
+  }
+ 
+h1#page-title {
+  text-align: center !important;
+  }
+    
+#block-block-3 .block-inner{
+  background-color: #fff !important;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px #000;  
+  margin: auto 0;
+  }
+  
+a .head-icons {
+ color: #CC0B0B !important;
+  }
+  
+.last-icon {
+  padding-right: 0 !important;
+  }
+
+.spacer {
+  padding: 0 10px !important;
+  }
+  
+h2.address-footer {
+  font-size: 1em;
+  }
+    
+.columns-inner {
+  margin-top: 85px;
+  }
+  
+.field-name-field-price-small, .field-name-field-price-large, .field-name-field-price-x-large {
+  font-size: .8em !important;
+  padding: 0 15px;
+  }
+
+.field-name-field-price-x-large {
+  padding-right: 0 !important;
+  }
+    
+.group-left h3 {
+  font-size: 1.2em !important;
+  }
+
+section#block-menu-menu-lunch-dinner-before-after ul.menu, section#block-block-1.our-details p {
+  text-align: center !important;
+  font-size: 1.4em;
+  font-family: 'vinyl';
+  text-transform: uppercase;
+  }
+   
+section#block-menu-menu-lunch-dinner-before-after h2.block-title, section#block-block-1.our-details h2.block-title {
+  font-size: 1.8em;
+  text-align: center !important;
+  margin-bottom: 25px;
+  border-bottom: 5px solid #2c2c2c;
+  padding-bottom: 10px;
+  } 
+
+.node-front .group-left {
+  width: 25% !important;
+  text-align: center;
+  }
+
+.node-front .group-right {
+  width: 75% !important;
+  text-align: left;
+  }
+  
+.node-front .group-left .icon-holder {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #fff;
+  text-align: center;
+  }
+
+.icon-holder.c-1 {
+  background-color: #E8CF19 !important;
+  }
+
+.icon-holder.c-2 {
+  background-color: #E87E08 !important;
+  }
+  
+.icon-holder.c-3, .icon-holder.c-7 {
+  background-color: #CC0B0B !important;
+  }
+  
+.icon-holder.c-4 {
+  background-color: #692009 !important;
+  }
+  
+.icon-holder.c-5 {
+  background-color: #5E3861 !important;
+  }    
+  
+.icon-holder.c-6 {
+  background-color: #00A0B0 !important;
+  }
+        
+.node-front .group-left i.info {
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 30px;
+  text-shadow: 1px 1px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  }
+  
+.node-front .group-right {
+  font-size: 1.25em !important;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.1em;
+  text-shadow: 2px 2px 2px #000000;
+  filter: dropshadow(color=#000000, offx=2, offy=2);
+  text-transform: uppercase;
+  font-family: 'vinyl';
+  } 
+
+.node-front .group-right span {
+  font-size: 1em !important;
+  line-height: 1.1em;
+  }
+  
+.front #columns {
+  margin-top: -50px;
+  }
+
+#block-views-sidebar-images-block {
+  display: none !important;
+  }
+
+.front #sub-panels-wrapper {
+  margin-top: 25px;
+  padding: 40px 15px;
+  background: url(images/wood-bg.png);
+  border-top: 1px solid #fff;
+  margin-bottom: -60px;
+  }
+
+.front #footer-panels-wrapper {
+  border-top: 1px solid #fff;
+  }
+            
+    /*
+    Float Region blocks example:
+    In smaller screen sizes we can remove the float and widths so all blocks
+    stack instead of displaying horizonally. The selector used here is an
+    "attribute selector" which will match on any float block class. Use your
+    inspector or Firebug to get the classes from the page output if you need
+    more granular control over block alignment and stacking.
+    
+    "Float Region blocks" is an extension for floating blocks in regions, see
+    your themes appearance settings, under the Extensions tab.
+  */
+  .region[class*="float-blocks"] .block {
+    float: none;
+    width: 100%;
+  }
+
+}
+
+/* Tablet sizes and up */
+@media only screen and (max-width: 768px) {
+section#block-menu-menu-lunch-dinner-before-after ul.menu, section#block-block-1.our-details p {
+  text-align: center !important;
+  font-size: 1.4em;
+  font-family: 'vinyl';
+  text-transform: uppercase;
+  }
+   
+section#block-menu-menu-lunch-dinner-before-after h2.block-title, section#block-block-1.our-details h2.block-title {
+  font-size: 2em;
+  text-align: center !important;
+  margin-bottom: 25px;
+  border-bottom: 5px solid #2c2c2c;
+  padding-bottom: 10px;
+  } 
+
+.node-front .group-left {
+  width: 20%;
+  text-align: center;
+  }
+
+.node-front .group-right {
+  width: 80%;
+  text-align: left;
+  }
+  
+.node-front .group-left .icon-holder {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 3px solid #fff;
+  text-align: center;
+  }
+
+.icon-holder.c-1 {
+  background-color: #E8CF19 !important;
+  }
+
+.icon-holder.c-2 {
+  background-color: #E87E08 !important;
+  }
+  
+.icon-holder.c-3, .icon-holder.c-7 {
+  background-color: #CC0B0B !important;
+  }
+  
+.icon-holder.c-4 {
+  background-color: #692009 !important;
+  }
+  
+.icon-holder.c-5 {
+  background-color: #5E3861 !important;
+  }    
+  
+.icon-holder.c-6 {
+  background-color: #00A0B0 !important;
+  }
+        
+.node-front .group-left i.info {
+  color: #fff;
+  font-size: 2em;
+  line-height: 45px;
+  text-shadow: 1px 1px 1px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  }
+  
+.node-front .group-right {
+  font-size: 2em;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.1em;
+  text-shadow: 2px 2px 2px #000000;
+  filter: dropshadow(color=#000000, offx=2, offy=2);
+  text-transform: uppercase;
+  font-family: 'vinyl';
+  } 
+
+.node-front .group-right span {
+  line-height: 45px;
+  font-size: 1.35em;
+  }
+
+}
+
+
+/* Desktops/laptops and up 
+@media only screen and (min-width: 1025px) {
+}
+*/
